@@ -1,0 +1,54 @@
+From jekutsch at inf.fu-berlin.de  Fri Sep  1 09:00:52 2006
+From: jekutsch at inf.fu-berlin.de (Sebastian Jekutsch)
+Date: Fri, 1 Sep 2006 09:00:52 +0200
+Subject: [Ecg-dev] Patch for FileWriter
+Message-ID: <B11A7FFF8FCDC14880468DC93015D7AC0439EE@spree.pcpool.mi.fu-berlin.de>
+
+Hi ECG users,
+
+I discovered an annoying behaviour of ECG: In case the events file to be
+written is *explicitly* specified in the setup file of ECG Lab, every
+time the Lab starts, this file will be overwritten and each written
+event from previously runs will be lost. Starting Eclipse with the
+Inline ECG is just a special case of this.
+
+With unaltered installations of ECG (and Inline ECG) the problem does
+not appear since for the default file {home}/ecg_log/out.log this
+behavior does not apply. But some of you may have changed the setup file
+by including lines like the following in the <properties> section of the
+File Writer module:
+
+<property>
+<name>
+Output File
+</name>
+<value>
+C:\events.log
+</value>
+<type>
+java.io.File
+</type>
+</property>
+
+The defect may be resolved by overwriting the folder
+ECG_FileSystemTargetModule in 
+* for Inline ECG:
+{eclipse}\plugins\org.electrocodeogram.sensor.eclipse_1.1.3\ecg\modules\
+
+* for stand alone Labs: {ECGLab}\ecg\modules\
+with the version in the attachments of this mail. The Lab (in Inline
+mode: Eclipse) needs to be restarted after patching. Although not
+testet, the patch should also work with version 1.1.2 of ECG.
+
+In case of any problems please don't hesitate to contact me directly.
+
+Cheers,
+Sebastian
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: ECG_FileSystemTargetModule.zip
+Type: application/x-zip-compressed
+Size: 5580 bytes
+Desc: ECG_FileSystemTargetModule.zip
+URL: <https://lists.berlios.de/pipermail/ecg-dev/attachments/20060901/a03dcd68/attachment.bin>
+

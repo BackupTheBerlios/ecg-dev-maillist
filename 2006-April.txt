@@ -1,0 +1,49 @@
+From restel at inf.fu-berlin.de  Mon Apr 24 17:31:09 2006
+From: restel at inf.fu-berlin.de (restel)
+Date: Mon, 24 Apr 2006 17:31:09 +0200
+Subject: [Ecg-dev] ECG und Eclipse Video-Tutorial
+Message-ID: <444CEF3D.1010707@inf.fu-berlin.de>
+
+Liebe ECG-Entwickler (und Benutzer),
+
+Sebastian hat ein Tutorial-Video ?ber die Einrichtung und Benutzung vom 
+ECG in und mit Eclipse erstellt.
+Dieses l?sst sich in verschiedenen Kodierungen unter 
+ftp://ftp.inf.fu-berlin.de/pub/jekutsch/ finden, jeweils beginnend mit 
+einem "EGCDevDoc....."
+
+
+Ich habe eine grobe Timeline verfasst:
+
+
+*********************
+
+Turorial: Einrichtung und Benutzung des ECG in Eclipse
+-------------------------------------------------------
+
+Video aufgenommen am 06.04.2006
+Dauer: ca. 84 Minuten
+
+Min. 00) Sichten der ECG-Berlios-Website
+Min. 02) Das Eclipse-Subersion-Plugin "Subclipse" Herunterladen, 
+Installieren und Einrichten
+Min. 08) Erl?uterung der EGG-Dateistruktur und Beginn eines Checkouts
+Min. 11) Erl?uterung aller "Teilprojekte"/Dateistruktur; parallel zum 
+Checkout
+Min. 17) Kompilieren des ECG mit Ant; Auschecken weiterer Teilprojekte; 
+Diskussion ?ber Qualit?t der Dokumentation; Compiler umstellen
+Min. 40) Installation des compilierten ECG-Labs; Datei 
+"sensor.properties" konfigurieren
+Min. 46) ECG-Lab ausf?hren und testen; Eclipse-Sensor starten
+Min. 57) Modul "EpisodeRecognizerIntermediate" hinzuf?gen, benutzen und 
+modifizieren
+Min 73) Commit zum Subversion (SVN); Bugtracking im BerliOS
+
+**********************
+
+
+viele Gr??e,
+Hannes
+
+
+

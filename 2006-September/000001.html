@@ -1,0 +1,103 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Ecg-dev] Patch for FileWriter
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/ecg-dev/2006-September/index.html" >
+   <LINK REL="made" HREF="mailto:ecg-dev%40lists.berlios.de?Subject=Re%3A%20%5BEcg-dev%5D%20Patch%20for%20FileWriter&In-Reply-To=%3CB11A7FFF8FCDC14880468DC93015D7AC0439EE%40spree.pcpool.mi.fu-berlin.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   
+   
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Ecg-dev] Patch for FileWriter</H1>
+    <B>Sebastian Jekutsch</B> 
+    <A HREF="mailto:ecg-dev%40lists.berlios.de?Subject=Re%3A%20%5BEcg-dev%5D%20Patch%20for%20FileWriter&In-Reply-To=%3CB11A7FFF8FCDC14880468DC93015D7AC0439EE%40spree.pcpool.mi.fu-berlin.de%3E"
+       TITLE="[Ecg-dev] Patch for FileWriter">jekutsch at inf.fu-berlin.de
+       </A><BR>
+    <I>Fri Sep  1 09:00:52 CEST 2006</I>
+    <P><UL>
+        
+        
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1">[ date ]</a>
+              <a href="thread.html#1">[ thread ]</a>
+              <a href="subject.html#1">[ subject ]</a>
+              <a href="author.html#1">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi ECG users,
+
+I discovered an annoying behaviour of ECG: In case the events file to be
+written is *explicitly* specified in the setup file of ECG Lab, every
+time the Lab starts, this file will be overwritten and each written
+event from previously runs will be lost. Starting Eclipse with the
+Inline ECG is just a special case of this.
+
+With unaltered installations of ECG (and Inline ECG) the problem does
+not appear since for the default file {home}/ecg_log/out.log this
+behavior does not apply. But some of you may have changed the setup file
+by including lines like the following in the &lt;properties&gt; section of the
+File Writer module:
+
+&lt;property&gt;
+&lt;name&gt;
+Output File
+&lt;/name&gt;
+&lt;value&gt;
+C:\events.log
+&lt;/value&gt;
+&lt;type&gt;
+java.io.File
+&lt;/type&gt;
+&lt;/property&gt;
+
+The defect may be resolved by overwriting the folder
+ECG_FileSystemTargetModule in 
+* for Inline ECG:
+{eclipse}\plugins\org.electrocodeogram.sensor.eclipse_1.1.3\ecg\modules\
+
+* for stand alone Labs: {ECGLab}\ecg\modules\
+with the version in the attachments of this mail. The Lab (in Inline
+mode: Eclipse) needs to be restarted after patching. Although not
+testet, the patch should also work with version 1.1.2 of ECG.
+
+In case of any problems please don't hesitate to contact me directly.
+
+Cheers,
+Sebastian
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: ECG_FileSystemTargetModule.zip
+Type: application/x-zip-compressed
+Size: 5580 bytes
+Desc: ECG_FileSystemTargetModule.zip
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/ecg-dev/attachments/20060901/a03dcd68/attachment.bin">https://lists.berlios.de/pipermail/ecg-dev/attachments/20060901/a03dcd68/attachment.bin</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	
+	
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1">[ date ]</a>
+              <a href="thread.html#1">[ thread ]</a>
+              <a href="subject.html#1">[ subject ]</a>
+              <a href="author.html#1">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/ecg-dev">More information about the Ecg-dev
+mailing list</a><br>
+</body></html>
